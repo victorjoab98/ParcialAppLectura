@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppParcial</string>
+    <string name="app_name">AppLeer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="escoje_la_vocal_correcta">Escoje la vocal inicial correcta</string>

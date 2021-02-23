@@ -26,7 +26,7 @@ class TitleFragment : Fragment() {
                 nombre = binding.txtPersonName.text.toString()
                 view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToLeveloneFragment(nombre))
             }else{
-                Toast.makeText(context, "Ingresa tu nombre para continuar", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Ingresa tu nombre para continuar", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -35,7 +35,7 @@ class TitleFragment : Fragment() {
                 nombre = binding.txtPersonName.text.toString()
                 view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToLeveltwoFragment(nombre))
             }else{
-                Toast.makeText(context, "Ingresa tu nombre para continuar", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Ingresa tu nombre para continuar", Toast.LENGTH_SHORT).show()
             }
         }
 

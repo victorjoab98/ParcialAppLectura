@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
@@ -15,19 +16,25 @@ class LeveltwoFragment : Fragment() {
 
     data class Word(
         val img: Int,
-        val answers: List<String>)
+        val answers: List<String>,
+        val palabra: String)
 
     private val words: MutableList<Word> = mutableListOf(
         Word( img =R.drawable.carro
-            ,answers = listOf("ca", "ru", "ae", "ci")),
+            ,answers = listOf("ca", "ru", "ae", "ci"),
+            palabra = "CARRO"),
         Word( img = R.drawable.lapiz
-            , answers = listOf("la", "gu", "di", "lo")),
+            , answers = listOf("la", "gu", "di", "lo"),
+            palabra = "LAPIZ"),
         Word( img = R.drawable.rata
-            , answers = listOf("ra", "re", "sa", "po")),
+            , answers = listOf("ra", "re", "sa", "po"),
+            palabra = "RATÓN"),
         Word( img = R.drawable.tomate
-            , answers = listOf("to", "hi", "da", "fe")),
+            , answers = listOf("to", "hi", "da", "fe"),
+            palabra = "TOMATE"),
         Word( img = R.drawable.toro
-            , answers = listOf("to", "ca", "te", "ue"))
+            , answers = listOf("to", "ca", "te", "ue"),
+            palabra = "TORO")
     )
 
     lateinit var currentWord: LeveltwoFragment.Word
@@ -61,6 +68,7 @@ class LeveltwoFragment : Fragment() {
                     R.id.fourthAnswerRadioButton -> answerIndex = 3
                 }
                 if (answers[answerIndex] == currentWord.answers[0]){
+                    Toast.makeText(context, "CORRECTO!! ES '${currentWord.palabra}'", Toast.LENGTH_SHORT).show()
                     wordIndex++
 
                     //SI aun no ha completado las 5 preguntas, mostrarle la siguiente

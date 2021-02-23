@@ -13,6 +13,8 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.appparcial.databinding.FragmentLeveloneBinding
+import java.util.*
+import kotlin.concurrent.schedule
 
 class LeveloneFragment : Fragment() {
 
@@ -24,19 +26,19 @@ class LeveloneFragment : Fragment() {
     private val words: MutableList<Word> = mutableListOf(
         Word( img =R.drawable.avion
             , answer = "a"
-            , palabra = "avion"),
+            , palabra = "AVION"),
         Word( img = R.drawable.elefante
             , answer = "e"
-            ,palabra = "elefante"),
+            ,palabra = "ELEFANTE"),
         Word( img = R.drawable.iglu
             , answer = "i"
-            , palabra = "iglu"),
+            , palabra = "IGLU"),
         Word( img = R.drawable.oso
             , answer = "o",
-            palabra = "oso"),
+            palabra = "OSO"),
         Word( img = R.drawable.uva
             , answer = "u"
-            , palabra = "uva")
+            , palabra = "UVA")
     )
 
     lateinit var currentWord: Word
@@ -77,7 +79,8 @@ class LeveloneFragment : Fragment() {
                 }
                 if (vocalesOpciones[answerIndex] == currentWord.answer){
 
-                    
+                    Toast.makeText(context, "CORRECTO!! ES '${currentWord.palabra}'", Toast.LENGTH_SHORT).show()
+
 
                     wordIndex++
 
