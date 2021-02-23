@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.example.appparcial.TitleFragment"
+        android:label="TitleFragment"
+        tools:layout="@layout/fragment_title">
+        <action
+            android:id="@+id/action_titleFragment_to_leveloneFragment"
+            app:destination="@id/leveloneFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_leveltwoFragment"
+            app:destination="@id/leveltwoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/leveloneFragment"
+        android:name="com.example.appparcial.LeveloneFragment"
+        android:label="LeveloneFragment"
+        tools:layout="@layout/fragment_levelone">
+        <action
+            android:id="@+id/action_leveloneFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.example.appparcial.WinFragment"
+        android:label="WinFragment"
+        tools:layout="@layout/fragment_win"/>
+    <fragment
+        android:id="@+id/leveltwoFragment"
+        android:name="com.example.appparcial.LeveltwoFragment"
+        android:label="LeveltwoFragment"
+        tools:layout="@layout/fragment_leveltwo">
+        <action
+            android:id="@+id/action_leveltwoFragment_to_winFragment"
+            app:destination="@id/winFragment" />
+    </fragment>
+
+</navigation>
