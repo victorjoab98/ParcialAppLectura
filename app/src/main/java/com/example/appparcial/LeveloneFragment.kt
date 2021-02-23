@@ -1,11 +1,13 @@
 package com.example.appparcial
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
@@ -16,32 +18,44 @@ class LeveloneFragment : Fragment() {
 
     data class Word(
         val img: Int,
-        val answer: String)
+        val answer: String,
+        val palabra: String)
 
     private val words: MutableList<Word> = mutableListOf(
         Word( img =R.drawable.avion
-            , answer = "a"),
+            , answer = "a"
+            , palabra = "avion"),
         Word( img = R.drawable.elefante
-            , answer = "e"),
+            , answer = "e"
+            ,palabra = "elefante"),
         Word( img = R.drawable.iglu
-            , answer = "i"),
+            , answer = "i"
+            , palabra = "iglu"),
         Word( img = R.drawable.oso
-            , answer = "o"),
+            , answer = "o",
+            palabra = "oso"),
         Word( img = R.drawable.uva
-            , answer = "u")
+            , answer = "u"
+            , palabra = "uva")
     )
 
     lateinit var currentWord: Word
     var vocalesOpciones: List<String> = listOf("a", "e", "i", "o", "u")
     private var wordIndex = 0
     private val numQuestions = 5
+    lateinit var nombre:String
 
 
+    @SuppressLint("StringFormatMatches")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
 
         val binding : FragmentLeveloneBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_levelone, container, false)
+
+        val args = LeveloneFragmentArgs.fromBundle(requireArguments())
+        nombre = args.nombre
+     //   binding.txtName.text = "Jugador: ${args.nombre}"
 
         //Mezcla el orden de las imagenes
         randomizeWords()
@@ -62,6 +76,9 @@ class LeveloneFragment : Fragment() {
                     R.id.fifthhAnswerRadioButton -> answerIndex = 4
                 }
                 if (vocalesOpciones[answerIndex] == currentWord.answer){
+
+                    
+
                     wordIndex++
 
                     //SI aun no ha completado las 5 preguntas, mostrarle la siguiente
@@ -100,8 +117,7 @@ class LeveloneFragment : Fragment() {
         // revuelve el arreglo de las vocales
         vocalesOpciones = vocalesOpciones.toMutableList()
         (vocalesOpciones as MutableList<String>).shuffle()
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_appParcial, wordIndex + 1, numQuestions)
-
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_appParcial, nombre, wordIndex+1, numQuestions)
     }
 
 }

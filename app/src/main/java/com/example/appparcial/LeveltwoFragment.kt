@@ -34,12 +34,17 @@ class LeveltwoFragment : Fragment() {
     lateinit var answers: MutableList<String>
     private var wordIndex = 0
     private val numQuestions = 5
+    lateinit var nombre:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val binding : FragmentLeveltwoBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_leveltwo, container, false)
+
+        val args = LeveltwoFragmentArgs.fromBundle(requireArguments())
+        nombre = args.nombre
+
         randomizeWords()
         binding.questionImage.setImageResource(currentWord.img)
         binding.game = this
@@ -94,7 +99,7 @@ class LeveltwoFragment : Fragment() {
         // revuelve el arreglo de las vocales
         answers = currentWord.answers.toMutableList()
         answers.shuffle()
-        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_appParcial, wordIndex + 1, numQuestions)
+        (activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_appParcial, nombre, wordIndex+1, numQuestions)
 
     }
 

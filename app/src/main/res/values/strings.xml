@@ -5,7 +5,8 @@
     <string name="escoje_la_vocal_correcta">Escoje la vocal inicial correcta</string>
     <string name="escoje_la_silaba_correcta">Escoje la silaba inicial correcta</string>
     <string name="probar">Probar</string>
-    <string name="title_android_appParcial">Trivia Lectura (%1$d/%2$d)</string>
+<!--    (%2$d/%3$d)-->
+    <string name="title_android_appParcial">Jugador: %1$s, Puntos: (%2$d/%3$d)</string>
     <string name="perdiste_intentalo_de_nuevo">Perdiste, intentalo de nuevo</string>
     <string name="intentarDeNuevo">Intenar de nuevo</string>
     <string name="inicio">Inicio</string>
