@@ -78,6 +78,8 @@ class LeveloneFragment : Fragment() {
                     }
                 }else{
                     //si se equivoco en una pierde
+                    view.findNavController().
+                    navigate(R.id.action_leveloneFragment_to_lossFragment)
                 }
 
             }

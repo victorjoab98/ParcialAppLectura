@@ -71,7 +71,8 @@ class LeveltwoFragment : Fragment() {
                         navigate(R.id.action_leveltwoFragment_to_winFragment)
                     }
                 }else{
-                    //si se equivoco en una pierde
+                    view.findNavController().
+                    navigate(R.id.action_leveltwoFragment_to_lossFragment)
                 }
             }
         }

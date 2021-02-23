@@ -9,8 +9,11 @@
         android:id="@+id/titleConstraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/medium_margin"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
 
         <TextView
@@ -21,6 +24,21 @@
             android:textSize="30sp"
             tools:layout_editor_absoluteX="132dp"
             tools:layout_editor_absoluteY="253dp" />
+
+        <EditText
+            android:id="@+id/txtPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            android:ems="10"
+            android:hint="Ingresa tu Nombre"
+            android:backgroundTint="@color/purple_500"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="115dp"
+            tools:layout_editor_absoluteY="273dp"
+            android:textAlignment="center"
+            android:textSize="@dimen/tamLetra"
+           />
 
         <Button
             android:id="@+id/buttonLevel1"

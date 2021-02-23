@@ -25,13 +25,24 @@
         tools:layout="@layout/fragment_levelone">
         <action
             android:id="@+id/action_leveloneFragment_to_winFragment"
-            app:destination="@id/winFragment" />
+            app:destination="@id/winFragment"
+            app:popUpTo="@id/leveloneFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_leveloneFragment_to_lossFragment"
+            app:destination="@id/lossFragment"
+            app:popUpTo="@id/leveloneFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/winFragment"
         android:name="com.example.appparcial.WinFragment"
         android:label="WinFragment"
-        tools:layout="@layout/fragment_win"/>
+        tools:layout="@layout/fragment_win">
+        <action
+            android:id="@+id/action_winFragment_to_titleFragment2"
+            app:destination="@id/titleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/leveltwoFragment"
         android:name="com.example.appparcial.LeveltwoFragment"
@@ -39,7 +50,23 @@
         tools:layout="@layout/fragment_leveltwo">
         <action
             android:id="@+id/action_leveltwoFragment_to_winFragment"
-            app:destination="@id/winFragment" />
+            app:destination="@id/winFragment"
+            app:popUpTo="@id/leveltwoFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_leveltwoFragment_to_lossFragment"
+            app:destination="@id/lossFragment"
+            app:popUpTo="@id/leveltwoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/lossFragment"
+        android:name="com.example.appparcial.LossFragment"
+        android:label="LossFragment"
+        tools:layout="@layout/fragment_loss">
+        <action
+            android:id="@+id/action_lossFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
     </fragment>
 
 </navigation>

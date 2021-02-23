@@ -51,7 +51,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/questionImage"
-                tools:text="@string/escoje_la_vocal_correcta" />
+                android:text="@string/escoje_la_silaba_correcta" />
 
             <RadioGroup
                 android:id="@+id/questionRadioGroup"
